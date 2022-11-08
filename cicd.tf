@@ -51,14 +51,6 @@ amazon-linux-extras install java-openjdk11
 yum install jenkins -y
 systemctl start jenkins
 systemctl enable jenkins
-# cd /opt
-# wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
-# tar -xzvf apache-maven-3.8.6-bin.tar.gz
-# mv apache-maven-3.8.6 maven38
-# # mv target/sparkjava-hello-world-1.0.war target/sparkjava-hello-world-$BUILD_NUMBER.war
-# # aws s3 cp target/sparkjava-hello-world-$BUILD_NUMBER.war s3://java-maven-0projects-cicd/
-# aws s3 cp s3://java-maven-0projects-cicd/sparkjava-hello-world-$PKG.war .
-# scp -r sparkjava-hello-world-$PKG.war root@172.31.12.104:/opt/tomcat9/webapps/
               EOF
 
   tags = {
@@ -69,3 +61,11 @@ systemctl enable jenkins
   # }
 }
 
+# cd /opt
+# wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+# tar -xzvf apache-maven-3.8.6-bin.tar.gz
+# mv apache-maven-3.8.6 maven38
+# # mv target/sparkjava-hello-world-1.0.war target/sparkjava-hello-world-$BUILD_NUMBER.war
+# # aws s3 cp target/sparkjava-hello-world-$BUILD_NUMBER.war s3://java-maven-0projects-cicd/
+# aws s3 cp s3://java-maven-0projects-cicd/sparkjava-hello-world-$PKG.war .
+# scp -r sparkjava-hello-world-$PKG.war root@172.31.12.104:/opt/tomcat9/webapps/

@@ -39,6 +39,8 @@ resource "aws_iam_policy" "artifactory" {
       {
         Action = [
           "s3:*",
+          "ecr:*"
+          
         ]
         Effect   = "Allow"
         Resource = "*"
